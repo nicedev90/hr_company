@@ -1,6 +1,6 @@
-package.json
+#package.json
 package-lock.json
 node_modules
-tailwind.config.js
-input.css
-.htaccess
+#tailwind.config.js
+#input.css
+#.htaccess

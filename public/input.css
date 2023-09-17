@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	
+}
+
+/* pseudo elements before and after */
+.show::before {
+	content: 'Show';
+}
+
+.show.hide::before {
+	content: 'Hide';
+}
+
+#pass-group #pass-check::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  transition: 0.5s;
+}
+
+#pass-group.weak #pass-check::before {
+  width: 25%;
+  background: rgb(240, 0, 0);
+}
+
+#pass-group.medium #pass-check::before {
+  width: 60%;
+  background: #ffac11;
+}
+
+#pass-group.strong #pass-check::before {
+  width: 100%;
+  background: rgb(16, 255, 16);
+}
+
+/* email validation  */
+#email-group #email-check::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  transition: 0.5s;
+}
+
+#email-group.valid #email-check::before {
+  width: 100%;
+  background: rgb(16, 255, 16);
+}
+
+
+/* mobile menu */
+.hamburger {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  top: 20;
+  left: 0;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+.active {
+  background: theme('colors.neutral');
+  color: theme('colors.dark');
+}
+
+.active:hover {
+  background: theme('colors.ctaLight');
+  color: white;
+}
+
+.inactive {
+  color: white;
+}
+
+.inactive:hover {
+  background: theme('colors.ctaLight');
+}
+
